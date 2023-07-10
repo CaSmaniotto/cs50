@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+        //dava pra utilizar addeventListner ao inves de criar uma funcao para cada botao R
+        function correta() {
+            document.querySelector('.correta').style.background='green';
+            document.querySelector('#feedback').innerHTML="Correto!"
+        }
+
+        function errada() {
+            document.querySelector('.incorreta').style.background='red';
+            document.querySelector('#feedback').innerHTML="Errado!";
+        }
+
+        function errada1() {
+            const array = document.querySelectorAll('.incorreta');
+            array[1].style.background="red";
+            document.querySelector('#feedback').innerHTML="Errado!";
+        }
+
+        function errada2() {
+            const array = document.querySelectorAll('.incorreta');
+            array[2].style.background="red";
+            document.querySelector('#feedback').innerHTML="Errado!";
+        }
+
+        function verificar() {
+            var x = document.getElementById('entrada').value;
+            {
+                if (x == "teste") {
+                    document.querySelector('#feedback2').innerHTML="Acertou!";
+                } else {
+                    document.querySelector('#feedback2').innerHTML="Errou!";
+                }
+            }
+        }
+            // TODO: Add code to check answers to questions
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3> QUESTION 1</h3>
+                <button class="correta" onclick="correta()"> R1 </button>
+                <button class="incorreta" onclick="errada()"> R2 </button>
+                <button class="incorreta" onclick="errada1()"> R3 </button>
+                <button class="incorreta" onclick="errada2()"> R4 </button>
+
+                <p id="feedback"></p>
+                <!-- TODO: Add multiple choice question here -->
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>QUESTION 2</h3>
+                <input type="text" id="entrada">
+                <button class="enviar" type="submit" onclick="verificar()">Checar Resposta</button>
+
+                <p id="feedback2"></p>
+
+                <!-- TODO: Add free response question here -->
+
+            </div>
+
+        </div>
+    </body>
+</html>

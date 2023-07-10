@@ -1,0 +1,27 @@
+sort1 uses: bubble sort
+
+How do you know?: Pois, sort1 tem o melhor tempo apenas no teste em que os números já estão ordenados corretamente.
+
+sort2 uses: merge sort
+
+How do you know?: Pois nos 3 testes, sort2 tem o menor tempo.
+
+sort3 uses: selection sort
+
+How do you know?: Pois nos 3 testes, o valor de saída é praticamente o mesmo.
+
+
+random5000.txt
+sort1 - 0.085s
+sort2 - 0.009s
+sort3 - 0.036s
+
+reversed5000.txt
+sort1 - 0.081s
+sort2 - 0.010s
+sort3 - 0.033s
+
+sorted5000.txt
+sort1 - 0.009s
+sort2 - 0.010s
+sort3 - 0.036s
