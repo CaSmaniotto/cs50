@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+       <tbody>
+
+        </tbody>
+        <tfoot>
+            {% for key, stock in balance.items() %}
+            <tr>
+                <td>{{ stock.symbol|upper }}</td>
+                <td>{{ stock.symbol|upper }}</td>
+                <td>{{ stock.shares }}</td>
+                <td>{{ "$%.2f"|format(stock.price) }}</td>
+                <td>{{ "$%.2f"|format(stock.total) }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4" style="text-align: end"><b>Cash</b></td>
+                <td class="border-0 text-end">{{ "$%.2f"|format(user.cash) }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4" style="text-align: end"><b>TOTAL</b></td>
+                <td class="border-0 w-bold text-end">
+                {% if balance %}
+                    {{ "$%.2f"|format(total_sum+user.cash) }}
+                {% else %}
+                    {{ "$%.2f"|format(user.cash) }}
+                {% endif %}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
